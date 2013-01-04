@@ -10,6 +10,5 @@ This package helps to manage space padding around paired delimiters.
           <DEL>
          {a=>1, b=>2}
 
-I made it to conform to some coding standards, but I actually haven't found
-an instance where I wanted to add an uneven spacing inside delimiters; so
-it's a global minor-mode that I just leave enabled now.  
+I wrote it to conform to some coding standards, but in some months of use it's
+been quite unobtrusive, so it's a global minor-mode now.
