@@ -13,10 +13,10 @@
 ;; Version: 0.1
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 2
-;; URL:
+;;     Update #: 3
+;; URL: https://github.com/lewang/delim-pad
 ;; Keywords:
-;; Compatibility:
+;; Compatibility: only tested with Emacs 24, but send PR and I'll consider it.
 
 ;;; Installation:
 
