@@ -13,7 +13,7 @@
 ;; Version: 0.1
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 3
+;;     Update #: 4
 ;; URL: https://github.com/lewang/delim-pad
 ;; Keywords:
 ;; Compatibility: only tested with Emacs 24, but send PR and I'll consider it.
@@ -25,9 +25,20 @@
 
 ;;; Commentary:
 
-;; This package helps to manage space padding around paired delimiters.
+;; When manipulating padding space in front of a list with SPC and DEL, make
+;; matching ending padding the same:
 ;;
-;; E.g. {a=>1, b=>2}
+;; e.g.
+;;
+;;     (    foo, bar    )
+;;      ^^^^        ####
+;;
+;;   In (^) region, make (#) region match.
+
+
+;; Usage example:
+;;
+;;      {a=>1, b=>2}
 ;;       ^
 ;;       <SPC>
 ;;      { a=>1, b=>2 }
@@ -37,7 +48,7 @@
 ;;
 ;; I made it to conform to some coding standards, but I actually haven't found
 ;; an instance where I wanted to add an uneven spacing inside delimiters; so
-;; it's a global minor-mode that I just leave enabled now.
+;; it's become a global minor-mode that I just leave enabled.
 ;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -62,26 +73,6 @@
 ;;; Code:
 
 (eval-when-compile (require 'cl))
-
-
-(provide 'delim-pad)
-
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; delim-pad.el ends here
-
-;;; When manipulating padding space in front of a list with SPC and DEL, make
-;;; matching ending padding match:
-;;;
-;;; e.g.
-;;;
-;;;     (    foo, bar    )
-;;;      ^^^^        ####
-;;;
-;;;   In (^) region, make (#) region match.
 
 
 ;;; BUGS:
@@ -212,4 +203,11 @@ the close with space as well."
 (eval-after-load "paredit"
   '(delim-pad-promote-map))
 
+
+
 (provide 'delim-pad)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; delim-pad.el ends here
+
